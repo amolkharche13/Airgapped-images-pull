@@ -1,5 +1,4 @@
-## Notes
-With -1 in gzip.
+## With -1 in gzip.
  ```bash
 root@smtpstackstate:~# time ./o11y-save-images_v1.sh -i o11y-images.txt -f o11y-images.tar.gz
 xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
