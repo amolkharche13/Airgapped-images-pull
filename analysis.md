@@ -1,3 +1,4 @@
+## Notes
 With -1 in gzip.
  ```bash
 root@smtpstackstate:~# time ./o11y-save-images_v1.sh -i o11y-images.txt -f o11y-images.tar.gz
@@ -40,6 +41,7 @@ sys     0m51.492s
 root@smtpstackstate:~#
 ```
 ## With Normal Process
+```bash
 root@smtpstackstate:~# time ./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz
 Image pull success: registry.rancher.com/suse-observability/clickhouse-backup:2.5.20-2b2c95ed
 Image pull success: registry.rancher.com/suse-observability/clickhouse:23.8.13-debian-12-r0-b9530c97
@@ -77,3 +79,4 @@ real    17m0.698s
 user    10m42.583s
 sys     1m1.701s
 root@smtpstackstate:~#
+```
