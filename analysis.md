@@ -1,4 +1,8 @@
-## With -1 in gzip.
+
+#### Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1)
+#### This will reduce the time needed for pulling and compressing images by 40%.  
+This improvement has been tested on a Droplet.
+
  ```bash
 root@smtpstackstate:~# time ./o11y-save-images_v1.sh -i o11y-images.txt -f o11y-images.tar.gz
 xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
@@ -39,7 +43,7 @@ user    5m34.054s
 sys     0m51.492s
 root@smtpstackstate:~#
 ```
-## With Normal Process
+#### With Normal Process
 ```bash
 root@smtpstackstate:~# time ./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz
 Image pull success: registry.rancher.com/suse-observability/clickhouse-backup:2.5.20-2b2c95ed
