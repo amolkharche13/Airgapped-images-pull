@@ -1,8 +1,12 @@
+### Context
+While working with a customer in an air-gapped environment, I noticed that the ./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz script takes a significant amount of time to pull images and create the .tar file. To address this, I modified the script to pull images in parallel.
 
-Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1)
-This will reduce the time needed for pulling and compressing images by 40%.  
+Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1).
+
+This will reduce the time needed for pulling and compressing images by **~40%.**  
 This improvement has been tested on a Droplet.
 
+#### With concurrent pulling images.
  ```bash
 root@smtpstackstate:~# time ./o11y-save-images_v1.sh -i o11y-images.txt -f o11y-images.tar.gz
 xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
@@ -83,6 +87,10 @@ user    10m42.583s
 sys     1m1.701s
 root@smtpstackstate:~#
 ```
+Also I don't see a significant difference in performance when pulling images in parallel using `docker pull`. Therefore, I think it’s better to pull the images in parallel.See the below graph for reference.
+
+We can also adjust the number of concurrent image pulls as needed.
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Without concurrent docker pull   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With 4 concurrent docker pull
 ![image](https://github.com/user-attachments/assets/3653e28b-9e14-48f3-9aa5-ac10ded23ff1)
 ![image](https://github.com/user-attachments/assets/5d89e64d-5324-441c-ac01-c0a197c12e50)
 ![image](https://github.com/user-attachments/assets/d3b86478-b214-4213-a699-768de158e71f)
