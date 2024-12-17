@@ -14,7 +14,6 @@ Please test it and let me know if adding concurrent image pulling to the script 
 #### With concurrent pulling images.
  ```bash
 root@smtpstackstate:~# time ./o11y-save-images_v1.sh -i o11y-images.txt -f o11y-images.tar.gz
-xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
 Image pull success: registry.rancher.com/suse-observability/elasticsearch-exporter:v1.7.0-03d6f56d
 Image pull success: registry.rancher.com/suse-observability/clickhouse-backup:2.5.20-2b2c95ed
 Image pull success: registry.rancher.com/suse-observability/envoy:v1.19.1-e418b2bd
