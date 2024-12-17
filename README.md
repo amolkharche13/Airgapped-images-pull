@@ -1,6 +1,6 @@
 
-#### Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1)
-#### This will reduce the time needed for pulling and compressing images by 40%.  
+Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1)
+This will reduce the time needed for pulling and compressing images by 40%.  
 This improvement has been tested on a Droplet.
 
  ```bash
