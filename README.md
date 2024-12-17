@@ -1,12 +1,15 @@
 ### Context
-While working with a customer in an air-gapped environment, I noticed that the ```./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz``` script takes a significant amount of time to pull images and create the .tar file. To address this, I modified the script to pull images in parallel.
+While working with a customer in an air-gapped environment, I noticed that the ```./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz``` script takes a significant amount of time to pull images and create the .tar file. 
 
+### Potential workaround 
+To address this, I modified the script to pull images in parallel.
 Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1).
-
 This will reduce the time needed for pulling and compressing images by **~40%.**  
 This improvement has been tested on a Droplet.
 
 Please test it and let me know if adding concurrent image pulling to the script would be worthwhile.
+
+### Analysis
 
 #### With concurrent pulling images.
  ```bash
