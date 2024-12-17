@@ -83,3 +83,8 @@ user    10m42.583s
 sys     1m1.701s
 root@smtpstackstate:~#
 ```
+![image](https://github.com/user-attachments/assets/3653e28b-9e14-48f3-9aa5-ac10ded23ff1)
+![image](https://github.com/user-attachments/assets/5d89e64d-5324-441c-ac01-c0a197c12e50)
+![image](https://github.com/user-attachments/assets/d3b86478-b214-4213-a699-768de158e71f)
+
+
