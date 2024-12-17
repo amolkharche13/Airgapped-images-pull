@@ -1,5 +1,5 @@
 ### Context
-While working with a customer in an air-gapped environment, I noticed that the ./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz script takes a significant amount of time to pull images and create the .tar file. To address this, I modified the script to pull images in parallel.
+While working with a customer in an air-gapped environment, I noticed that the ```./o11y-save-images.sh -i o11y-images.txt -f o11y-images.tar.gz``` script takes a significant amount of time to pull images and create the .tar file. To address this, I modified the script to pull images in parallel.
 
 Pulling images with 4 concurrent pulls and compressing zip with fastest compression(gzip -1).
 
