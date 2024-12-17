@@ -6,6 +6,8 @@ Pulling images with 4 concurrent pulls and compressing zip with fastest compress
 This will reduce the time needed for pulling and compressing images by **~40%.**  
 This improvement has been tested on a Droplet.
 
+Please test it and let me know if adding concurrent image pulling to the script would be worthwhile.
+
 #### With concurrent pulling images.
  ```bash
 root@smtpstackstate:~# time ./o11y-save-images_v1.sh -i o11y-images.txt -f o11y-images.tar.gz
